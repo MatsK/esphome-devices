@@ -15,9 +15,13 @@ between different parts of the sensing area, the signal is pulled high.
 ![inside](/pir-inside.jpg)
 
 Connecting the PIR sensor is also quite simple. You need to connect
-`GND` to a GND pin on your board and `VCC` to a `5V` or `12V` pin.
-Technically you can also connect `VCC` to `3.3V`, but the sensor
-measurements won't be as stable.
+`GND` to a GND pin on your board and the `VCC` pin to a power source
+between `5V` - `12V`. The PIR has a voltage regulator that as the Vcc
+driving the IC BIS0001 has a voltage span of 3-5 volt.
+
+Alternative you can connect a `3.3V` power source to the pin labeled
+`H` (marked green, see picture) and then you will bypass the voltage
+regulator and the polarity protection diode.
 
 Next you need to connect the signal pin (`OUT`). Fortunately, the sensor
 signal has a voltage of `3.3V` max, so we can directly connect it to a
